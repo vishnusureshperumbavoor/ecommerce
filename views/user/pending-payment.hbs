@@ -1,0 +1,42 @@
+<div class="container">
+  {{#each response}}
+  <form 
+  action="/pending-payment" id="pending-checkout" method="POST" class="row">
+    <div class="col-md-6 pl-5 mt-5">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          
+            <h5 class="card-title">Due Amount : Rs {{this.totalAmount}}</h5>
+
+            <p>Payment Method</p>
+            <label for="" class="radio-inline">
+              <input
+                type="radio"
+                name="payment-method"
+                value="COD"
+                class="m-1"
+                checked
+              />COD
+            </label><br />
+            <label for="" class="radio-inline mt-2">
+              <input
+                type="radio"
+                name="payment-method"
+                value="Online"
+                class="m-1"
+              />Online
+            </label>
+            <input type="text" name="orderId" id="" value="{{this._id}}" hidden />
+            <input type="text" name="totalAmount" id="" value="{{this.totalAmount}}" hidden />
+            <p>{{this._id}}</p>
+            <button
+              class="btn btn-success"
+              style="width:100%"
+              type="submit"
+            >Purchase</button>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form action="/signup" enctype="multipart/form-data" method="POST">
+        <h1 style="text-align: center; font-weight:bold">SIGNUP</h1>
+        <label for="">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter name"
+          name="name"
+          required
+        />
+        <label for="">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="enter email"
+          name="email"
+          required
+        />
+        <label for="">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="enter password"
+          required
+        />
+        <a href="/login" 
+        style="text-decoration:none; font-size:small" 
+        class="form-text text-muted">Do u already have account?</a>
+        <button type="submit" class="btn btn-primary mt-3">Signup</button>
+      </form>
+    </div>
+  </div>
+</div>

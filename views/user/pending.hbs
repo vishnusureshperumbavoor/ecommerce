@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h1 class="font-weight-bold text-center">PAYMENT PENDING PRODUCTS</h1>
+      <table class="table" id="pending-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">UserId</th>
+            <th scope="col">Address</th>
+            <th scope="col">Pincode</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Products</th>
+            <th scope="col">Pending</th>
+          </tr>
+        </thead>
+        
+          <tbody>
+            <tr>
+                {{#each orders}}
+              <td>{{this.date}}</td>
+                <td>{{this.userId}}</td>
+              <td>{{this.deliveryDetails.address}}</td>
+              <td>{{this.deliveryDetails.pincode}}</td>
+              <td>{{this.deliveryDetails.mobile}}</td>
+              <td>{{this.totalAmount}}</td>
+              <td>
+                <a
+                  href="/view-products/{{this._id}}"
+                  style="color:white"
+                  type="button"
+                  class="btn btn-primary"
+                >View Products</a>
+              </td>
+              <td>
+                {{this._id}}
+                <a
+                  href="/pending-payment/{{this._id}}"
+                  style="color:white"
+                  type="button"
+                  class="btn btn-success"
+                >Place Order</a>
+              </td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</div>

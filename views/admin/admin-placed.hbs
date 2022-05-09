@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h1 class="font-weight-bold text-center">PLACED PRODUCTS</h1>
+      <table class="table" id="admin-placed-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">UserId</th>
+            <th scope="col">Address</th>
+            <th scope="col">Pincode</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Products</th>
+            <th scope="col">Shipping</th>
+          </tr>
+        </thead>
+        
+          <tbody>
+            <tr>
+                {{#each orders}}
+              <td>{{this.date}}</td>
+                <td>{{this.userId}}</td>
+              <td>{{this.deliveryDetails.address}}</td>
+              <td>{{this.deliveryDetails.pincode}}</td>
+              <td>{{this.deliveryDetails.mobile}}</td>
+              <td>{{this.totalAmount}}</td>
+              <td>{{this.paymentMethod}}</td>
+              <td>
+                <a
+                  href="/admin/admin-view-order-products/{{this._id}}"
+                  style="color:white"
+                  type="button"
+                  class="btn btn-primary"
+                >View Products</a>
+              </td>
+              
+              <td>
+                <button onclick="startShipping('{{this._id}}')" class="btn btn-success">Start Shipping</button>
+              </td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</div>

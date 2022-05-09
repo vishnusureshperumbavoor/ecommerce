@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form action="/admin/admin-login" enctype="multipart/form-data" method="POST">
+        <h1 style="text-align: center; font-weight:bold">Testing github </h1>
+        {{#if adminLoginErr}}
+            <p class="alert alert-danger">{{adminLoginErr}}</p>
+        {{/if}}
+        <label for="">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter email"
+          name="email"
+        />
+        <label for="">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="enter password"
+          name="password"
+        />
+        <button type="submit" class="btn btn-primary mt-3">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

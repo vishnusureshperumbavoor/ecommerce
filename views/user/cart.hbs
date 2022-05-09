@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table mt-5">
+
+        <thead>
+
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {{#each products}}
+            <tr>
+              <td><img
+                  style="width:70px;height:70px"
+                  src="/images/{{this.products._id}}.jpg"
+                  alt=""
+                /></td>
+              <td>{{this.products.name}}</td>
+              <td>{{this.products.price}}</td>
+
+              <td>
+
+                <button
+                  onclick="changeQuantity('{{this._id}}','{{this.products._id}}','{{../user._id}}',-1)"
+                  class="cart-item-count mr-3"
+                >-</button>
+                <span id="{{this.products._id}}">{{this.quantity}}</span>
+                <button
+                  onclick="changeQuantity('{{this._id}}','{{this.products._id}}','{{../user._id}}',1)"
+                  class="cart-item-count mr-3"
+                >+</button>
+              </td>
+
+              <td>
+                <a
+                  class="btn btn-danger"
+                  onClick="if(confirm('Are you sure your want to {{this.name}}?')){deleteCart('{{this._id}}','{{this.products._id}}')}"
+                >Remove</a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-12">
+        <h3 class="mr-4 mt-3 float-right">Total : ₹ <span id="total">{{total}}</span></h3>
+    </div>
+    <div class="col-md-12">
+        <a
+          href="/place-order"
+          class="btn btn-success mt-2 float-right"
+          style="width:25%"
+        ><b>Place Order</b></a>
+    </div>
+
+
+  </div>
+</div>

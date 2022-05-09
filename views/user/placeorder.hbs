@@ -1,0 +1,61 @@
+<div class="container">
+  <form action="/place-order" id="checkout-form" method="post" class="row">
+    <div class="col-md-6 mt-3">
+      <h1 style="text-align: center; font-weight:bold">Enter Delivery Details</h1>
+      <label for="">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter address"
+        name="address"
+      />
+      <label for="">Pincode</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="enter pincode"
+        name="pincode"
+      />
+      <label for="">Mobile</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="enter mobile number"
+        name="mobile"
+      />
+      <input type="text" name="userId" id="" value="{{user._id}}" hidden />
+
+    </div>
+    <div class="col-md-6 pl-5 mt-5">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Total Amount : Rs {{total}}</h5>
+          <p>Payment Method</p>
+          <label for="" class="radio-inline">
+            <input
+              type="radio"
+              name="payment-method"
+              value="COD"
+              class="m-1"
+              checked
+            />COD
+          </label><br />
+          <label for="" class="radio-inline mt-2">
+            <input
+              type="radio"
+              name="payment-method"
+              value="Online"
+              class="m-1"
+            />Online
+          </label>
+          <button
+            class="btn btn-success"
+            style="width:100%"
+            type="submit"
+          >Purchase</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

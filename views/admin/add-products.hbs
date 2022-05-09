@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form
+        action="/admin/add-products"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <h1 style="text-align: center; font-weight:bold">RANDOM TESTING PURPOSE</h1>
+        <label for="">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter name"
+          name="name"
+          required
+        />
+        <label for="">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="enter category"
+          name="category"
+          required
+        />
+        <label for="">Price</label>
+        <input
+          type="number"
+          name="price"
+          class="form-control"
+          placeholder="enter price"
+          required
+        />
+
+        <label for="">Image</label>
+        <img
+          style="width: 50px; height:50px; margin:8px;"
+          alt=""
+          id="imgView"
+        />
+        <input
+          type="file"
+          class="form-control-file"
+          name="image"
+          onchange="viewImage(event)"
+            
+        />
+
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
