@@ -32,21 +32,21 @@
           <h5 class="card-title">Total Amount : Rs {{total}}</h5>
           <p>Payment Method</p>
           <label for="" class="radio-inline">
-            <input
-              type="radio"
-              name="payment-method"
-              value="COD"
-              class="m-1"
-              checked
-            />COD
-          </label><br />
-          <label for="" class="radio-inline mt-2">
+            <label>
             <input
               type="radio"
               name="payment-method"
               value="Online"
               class="m-1"
+              checked
             />Online
+          </label class="radio-inline mt-2"><br>
+            <input
+              type="radio"
+              name="payment-method"
+              value="COD"
+              class="m-1"
+            />COD
           </label>
           <button
             class="btn btn-success"

@@ -1,7 +1,22 @@
-server side ecommerce application using mongodb, expressjs and nodejs.
+# Server Cart
+### Server side ecommerce application
 
-handlebars is used to make html contents dynamic. It is more easier to use than ejs (embedded javascript).
+## Tech stacks
+1. NodeJS
+2. ExpressJS
+3. MongoDB
+4. Razorpay
 
-local mongodb is used not mongodb atlas cloud. 
-
-session and cookie feature is available.
+## How to start
+```
+git clone https://github.com/vishnusureshperumbavoor/servercart
+cd servercart
+npm install
+```
+Add PORT, MONGODB_URI, RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET in the .env file
+```
+npm run dev
+```
+* Save admin name, email and bcrypt generated password on collection named admins
+* go to admin url PORT/admin
+* add products
