@@ -343,7 +343,6 @@ module.exports = {
     });
   },
   generateRazorpay: (orderId, total) => {
-    console.log("called generate razorpay");
     return new Promise((resolve, reject) => {
       instance.orders.create(
         {
@@ -373,8 +372,10 @@ module.exports = {
       );
       hmac = hmac.digest("hex");
       if (hmac == details["payment[razorpay_signature]"]) {
+        console.log("payment verification successful");
         resolve();
       } else {
+        console.log("payment verification error");
         reject();
       }
     });
