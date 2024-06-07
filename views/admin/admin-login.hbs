@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">
-      <form action="/admin/admin-login" enctype="multipart/form-data" method="POST">
+      <form
+        action="/admin/admin-login"
+        enctype="multipart/form-data"
+        method="POST"
+      >
         <h1 style="text-align: center; font-weight:bold">ADMIN LOGIN</h1>
         {{#if adminLoginErr}}
-            <p class="alert alert-danger">{{adminLoginErr}}</p>
+          <p class="alert alert-danger">{{adminLoginErr}}</p>
         {{/if}}
         <label for="">Email</label>
         <input
           type="email"
-          class="form-control"
+          class="form-control mb-2"
           placeholder="Enter email"
           name="email"
         />
@@ -20,6 +24,11 @@
           placeholder="enter password"
           name="password"
         />
+        <a
+          href="/admin/admin-signup/"
+          style="text-decoration:none; font-size:medium"
+          class="form-text text-muted"
+        >Dont have admin accounts? Create an admin account here</a>
         <button type="submit" class="btn btn-primary mt-3">Login</button>
       </form>
     </div>

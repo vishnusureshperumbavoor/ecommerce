@@ -4,29 +4,29 @@
       <form action="/login" enctype="multipart/form-data" method="POST">
         <h1 style="text-align: center; font-weight:bold">LOGIN</h1>
         {{#if userLoginErr}}
-            <p class="alert alert-danger">{{userLoginErr}}</p>
+          <p class="alert alert-danger">{{userLoginErr}}</p>
         {{/if}}
-        <label for="">Email</label>
+        <label style="font-size:large">Email</label>
         <input
           type="email"
-          class="form-control"
+          class="form-control mb-2"
           placeholder="Enter email"
           name="email"
           required
         />
-        <label for="">Password</label>
+        <label style="font-size:large">Password</label>
         <input
           type="password"
           class="form-control"
-          placeholder="enter password"
+          placeholder="Enter password"
           name="password"
           required
         />
         <a
           href="/signup"
-          style="text-decoration:none; font-size:small"
+          style="text-decoration:none; font-size:medium"
           class="form-text text-muted"
-        >Create an account</a>
+        >Dont have an account? Create an account</a>
         <button type="submit" class="btn btn-primary mt-3">Login</button>
       </form>
     </div>

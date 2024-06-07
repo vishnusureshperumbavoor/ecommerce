@@ -2,9 +2,25 @@ var db = require("../database/connections");
 var collection = require("../database/collections");
 var objectId = require("mongodb").ObjectId;
 const fs = require("fs");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 // exports
 module.exports = {
+  doSignup: (adminDetails) => {
+    return new Promise(async (resolve, reject) => {
+      adminDetails.password = await bcrypt.hash(adminDetails.password, 10);
+      db.get()
+        .collection(collection.ADMIN_COLLECTION)
+        .insertOne(adminDetails)
+        .then((response) => {
+          response.admin = adminDetails;
+          response.signupStatus = true;
+          resolve(response);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
   doLogin: (adminData) => {
     return new Promise(async (resolve, reject) => {
       let response = {};
@@ -12,7 +28,7 @@ module.exports = {
         .get()
         .collection(collection.ADMIN_COLLECTION)
         .findOne({ email: adminData.email });
-    console.log(admin);
+      console.log(admin);
       if (admin) {
         if (await bcrypt.compare(adminData.password, admin.password)) {
           response.admin = admin;

@@ -16,6 +16,29 @@ router.get("/", adminVerify, function (req, res, next) {
     res.render("admin/adminhome", { admin, products });
   });
 });
+
+router.get("/admin-signup", (req, res) => {
+  res.render("admin/admin-signup");
+});
+
+router.post("/admin-signup", (req, res) => {
+  adminHelpers
+    .doSignup(req.body)
+    .then((response) => {
+      req.session.admin = response.admin;
+      req.session.adminLoggedIn = true;
+      console.log("Admin signup successful");
+      res.redirect("/admin");
+    })
+    .catch((error) => {
+      console.error("Error during admin signup:", error);
+      req.session.adminLoggedIn = false;
+      req.session.admin = null;
+      res.redirect("/admin-signup");
+    });
+});
+
+
 router.get("/admin-login", (req, res) => {
   if (req.session.admin) {
     res.redirect("/admin");
