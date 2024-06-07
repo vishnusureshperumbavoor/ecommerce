@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   $("#order-table").DataTable();
 });
@@ -107,7 +106,7 @@ $("#pending-checkout").submit((e) => {
 function razorpayPayment(order) {
   var options = {
     key: "rzp_test_xONB6ZRVd3ZDkb",
-    amount: order.amount, 
+    amount: order.amount,
     currency: "INR",
     name: "VSP Industries",
     description: "Test Transaction",

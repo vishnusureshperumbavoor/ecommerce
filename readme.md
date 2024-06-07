@@ -33,9 +33,8 @@ MONGODB_URI = <your_mongodb_uri>
 RAZORPAY_KEY_ID = <your_razorpay_key_id>
 RAZORPAY_KEY_SECRET = <your_razorpay_key_secret>
 ```
-
-- Go to mongodb atlas and save admin name, email and bcrypt generated password on collection named admins
-- Go to admin url localhost:3000/admin and add products
+Go to localhost:3000/admin to create admin profile and add products  
+Go to localhost:3000 to create user profile and buy products
 
 ## Contact
 
