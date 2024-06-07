@@ -9,11 +9,11 @@ module.exports.connect = async () => {
   try {
     const client = new MongoClient(uri, { useNewUrlParser: true });
     await client.connect();
-    db = client.db(); // Use the database specified in the URI
+    db = client.db();
     console.log("Connected to MongoDB");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
   }
 };
 
-module.exports.get = () => db; // Directly return the database instance
+module.exports.get = () => db;
